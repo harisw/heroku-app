@@ -1,3 +1,4 @@
 <div class="jumbotron">
-  <a class="btn btn-info">Games</a><a class="btn btn-success">Chat Room</a>
+  <a class="btn btn-info">Games</a>
+  <%= link "Chat Room", to: room_path(@conn, :index), class: "btn btn-success"%>
 </div>

@@ -1,7 +1,7 @@
 defmodule Heroku.UserController do
     use Heroku.Web, :controller
     alias Heroku.User
-    plug :authenticate_user when action in [:index, :show]
+    plug :authenticate_user when action in [:show]
 
     def index(conn, _params) do
         users = Repo.all(User)
