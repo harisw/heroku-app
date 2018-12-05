@@ -25,9 +25,9 @@ defmodule Heroku.UserController do
                 conn
                 |> Heroku.Auth.login(user)
                 |> put_flash(:info, "#{user.name} created!")
-                |> redirect(to: user_path(conn, :index))
+                |> redirect(to: room_path(conn, :index))
             {:error, changeset} ->
-                render(conn, "new.html", changeset: changeset)
+                redirect(conn, to: user_path(conn, :new))
         end
     end
 end

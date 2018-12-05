@@ -14,7 +14,7 @@ defmodule Heroku.SessionController do
             {:error, _reason, conn} ->
                 conn
                 |> put_flash(:error, "Invalid username or password")
-                |> render("new.html")
+                |> redirect(to: room_path(conn, :index))
         end
     end
 
