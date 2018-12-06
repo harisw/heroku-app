@@ -1,27 +1,49 @@
-<h1>New User</h1>
+<div class="row">
+    <div class="col-md-12">
+        <div class="block">
+            <div class="block-header block-header-default">
+                <h3 class="block-title">Login Form</h3>
+                <div class="block-options">
+                    <button type="button" class="btn-block-option">
+                        <i class="si si-wrench"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="block-content">
+                <%= form_for @changeset, user_path(@conn, :create), fn f -> %>
+                    <%= if @changeset.action do %>
+                        <div class="alert alert-danger">
+                            <p> Oops! Something went wrong!</p>
+                        </div>
+                    <% end %>
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <%= text_input f, :name, placeholder: "Write your Name here", class: "form-control"%>
+                        <%= error_tag f, :name%>
+                    </div>
 
-<%= form_for @changeset, user_path(@conn, :create), fn f -> %>
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <%= text_input f, :username, placeholder: "Username", class: "form-control"%>
+                        <%= error_tag f, :username%>
+                    </div>
 
-    <%= if @changeset.action do %>
-        <div class="alert alert-danger">
-            <p> Oops! Something went wrong!</p>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <%= text_input f, :phone, placeholder: "Phone Number", class: "form-control"%>
+                        <%= error_tag f, :phone%>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">New Password</label>
+                        <%= password_input f, :password, placeholder: "Password, 6-100 character", class: "form-control"%>
+                        <%= error_tag f, :password%>
+                    </div>
+
+                    <%= submit "Sign Up", class: "btn btn-primary"%>
+                <% end%>
+                <p>If you already have account, <%= link "Login Here", to: user_path(@conn, :index)%> </p>                
+            </div>
         </div>
-    <% end %>
-
-    <div class="form-group">
-        <%= text_input f, :name, placeholder: "Write your Name here", class: "form-control"%>
-        <%= error_tag f, :name%>
     </div>
-
-    <div class="form-group">
-        <%= text_input f, :username, placeholder: "Username", class: "form-control"%>
-        <%= error_tag f, :username%>
-    </div>
-
-    <div class="form-group">
-        <%= password_input f, :password, placeholder: "Password, 6-100 character", class: "form-control"%>
-        <%= error_tag f, :password%>
-    </div>
-
-    <%= submit "Sign Up", class: "btn btn-primary"%>
-<% end%>
+</div>

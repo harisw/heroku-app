@@ -152,7 +152,9 @@
             <!-- Main Container -->
             <main id="main-container">
                 <!-- Page Content -->
-                <%= render @view_module, @view_template, assigns %>
+                <div class="content">
+                    <%= render @view_module, @view_template, assigns %>
+                </div>
                 <!-- END Page Content -->
             </main>
             <!-- END Main Container -->

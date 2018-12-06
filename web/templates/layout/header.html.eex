@@ -54,7 +54,7 @@
                     <% else %>
                         <div class="content-header-section">
                         <%= link "Sign Up", to: user_path(@conn, :new), class: "btn btn-rounded btn-success", style: "margin-right:20px;"%>
-                        <%= link "Sign In", to: session_path(@conn, :new), class: "btn btn-rounded btn-info"%>
+                        <%= link "Sign In", to: user_path(@conn, :index), class: "btn btn-rounded btn-info"%>
                         </div>
                     <% end %>
                     <!-- END Right Section -->

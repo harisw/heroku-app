@@ -6,6 +6,7 @@ defmodule Heroku.User do
     field :password, :string, virtual: true
     field :username, :string
     field :name, :string
+    field :phone, :string
 
     timestamps()
   end
@@ -18,6 +19,7 @@ defmodule Heroku.User do
     |> cast(params, [:username, :name])
     |> validate_required([:username, :name])
     |> unique_constraint(:username)
+    |> unique_constraint(:phone)
   end
 
   def registration_changeset(user, params) do

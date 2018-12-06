@@ -5,6 +5,8 @@ defmodule Heroku.Room do
     field :name, :string
     field :password_hash, :string
     field :slug, :string
+    field :is_online, :boolean
+    field :last_update, :utc_datetime
 
     timestamps()
   end
