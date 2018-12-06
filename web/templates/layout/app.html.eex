@@ -172,6 +172,7 @@
         </div>
         <!-- END Page Container -->
 
+        <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
         <!-- Codebase Core JS -->
         <script src="<%= static_path(@conn, "/js/core/jquery.min.js") %>"></script>
         <script src="<%= static_path(@conn, "/js/core/bootstrap.bundle.min.js") %>"></script>
