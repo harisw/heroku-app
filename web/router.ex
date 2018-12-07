@@ -20,7 +20,7 @@ defmodule Heroku.Router do
     get "/", PageController, :index
     resources "/users", UserController, only: [:index, :show, :new, :create]
     resources "/sessions", SessionController, only: [:new, :create, :delete]
-    resources "/room", RoomController, only: [:index, :create, :show]
+    resources "/room", RoomController, only: [:index, :create, :show], param: "slug"
   end
 
   # Other scopes may use custom stacks.
