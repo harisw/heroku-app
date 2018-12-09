@@ -8,6 +8,7 @@ defmodule Heroku.Room do
     field :slug, :string
     field :is_online, :boolean
     field :last_update, :utc_datetime
+    field :logo, :string
 
     has_many :chats, Heroku.Chat
     timestamps()
@@ -21,8 +22,6 @@ defmodule Heroku.Room do
     |> cast(params, [:name])
     |> validate_required([:name])
     |> unique_constraint(:name)
-    |> slugify_title()
-    |> add_last_update()
   end
 
   def creation_changeset(room, params) do
@@ -30,6 +29,9 @@ defmodule Heroku.Room do
     |> changeset(params)
     |> cast(params, ~w(password), [])
     |> put_pass_hash()
+    |> slugify_name()
+    |> add_last_update()
+    |> insert_img()
   end
 
   defp put_pass_hash(changeset) do
@@ -41,7 +43,7 @@ defmodule Heroku.Room do
     end
   end
 
-  defp slugify_title(changeset) do
+  defp slugify_name(changeset) do
     if name = get_change(changeset, :name) do
       put_change(changeset, :slug, slugify(name))
     else
@@ -70,4 +72,12 @@ defmodule Heroku.Room do
     end
   end
 
+  def insert_img(changeset) do
+    case get_field(changeset, :logo) do
+      logo ->
+        changeset
+      true ->
+        put_change(changeset, :logo, Phoenix.View.static_path(Phoenix.Conn, "/images/rooms/default/default.png"))
+    end    
+  end
 end

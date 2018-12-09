@@ -1,0 +1,17 @@
+<tr>
+    <th class="text-center" scope="row"><img class="img-avatar img-avatar32" src="<%= static_path(@conn, "/images/avatars/avatar15.jpg")%>" alt="">
+    </th>
+    <td><%= @room.name %></td>
+    <td class="d-none d-sm-table-cell">
+        <span class="badge badge-primary">Personal</span>
+    </td>
+    <td class="text-center">
+        <div class="btn-group">
+            <%= link to: room_path(@conn, :show, @room) do %>
+            <button type="button" class="btn btn-sm btn-secondary" data-toggle="tooltip" title="Join">
+                <i class="fa fa-pencil"></i>
+            </button>
+            <% end %>
+        </div>
+    </td>
+</tr>

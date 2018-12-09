@@ -8,6 +8,7 @@ defmodule Heroku.User do
     field :name, :string
     field :phone, :string
 
+    has_many :chats, Heroku.Chat
     timestamps()
   end
 

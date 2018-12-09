@@ -173,7 +173,7 @@
             <!-- END Footer -->
         </div>
         <!-- END Page Container -->
-
+        <script>window.userToken = "<%= assigns[:user_token] %>" </script> 
         <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
         <!-- Codebase Core JS -->
         <script src="<%= static_path(@conn, "/js/core/jquery.min.js") %>"></script>

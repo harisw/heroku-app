@@ -5,7 +5,8 @@ defmodule Heroku.RoomController do
     
     def index(conn, _params) do
         changeset = Room.changeset(%Room{})
-        render conn, "index.html", changeset: changeset
+        rooms = Repo.all(Room)
+        render conn, "index.html", changeset: changeset, rooms: rooms
     end
 
     def show(conn, %{"slug" => slug}) do

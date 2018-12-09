@@ -2,7 +2,7 @@ defmodule Heroku.UserSocket do
   use Phoenix.Socket
 
   ## Channels
-  # channel "room:*", Heroku.RoomChannel
+  channel "room:*", Heroku.RoomChannel
 
   ## Transports
   transport :websocket, Phoenix.Transports.WebSocket

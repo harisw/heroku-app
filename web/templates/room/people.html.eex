@@ -1,0 +1,147 @@
+<div class="tab-pane fade fade-left" id="chat-people" role="tabpanel">
+    <div class="js-chat-people block-content block-content-full overflow-y-auto bg-pattern" style="background-image: url('assets/img/various/bg-pattern-inverse.png');">
+        <div class="row mb-0">
+            <div class="col-md-4">
+                <h3 class="h1 font-w300 text-success">Online</h3>
+                <ul class="nav-users push">
+                    <li>
+                        <a href="javascript:void(0)">
+                            <img class="img-avatar" src="assets/img/avatars/avatar1.jpg" alt="">
+                            <i class="fa fa-circle text-success"></i> Lori Grant
+                            <div class="font-w400 font-size-xs text-muted">Photographer</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">
+                            <img class="img-avatar" src="assets/img/avatars/avatar15.jpg" alt="">
+                            <i class="fa fa-circle text-success"></i> Jesse Fisher
+                            <div class="font-w400 font-size-xs text-muted">Web Designer</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">
+                            <img class="img-avatar" src="assets/img/avatars/avatar14.jpg" alt="">
+                            <i class="fa fa-circle text-success"></i> Thomas Riley
+                            <div class="font-w400 font-size-xs text-muted">Web Designer</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">
+                            <img class="img-avatar" src="assets/img/avatars/avatar15.jpg" alt="">
+                            <i class="fa fa-circle text-success"></i> Jeffrey Shaw
+                            <div class="font-w400 font-size-xs text-muted">Web Developer</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">
+                            <img class="img-avatar" src="assets/img/avatars/avatar4.jpg" alt="">
+                            <i class="fa fa-circle text-success"></i> Susan Day
+                            <div class="font-w400 font-size-xs text-muted">UI Designer</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">
+                            <img class="img-avatar" src="assets/img/avatars/avatar14.jpg" alt="">
+                            <i class="fa fa-circle text-success"></i> Jose Parker
+                            <div class="font-w400 font-size-xs text-muted">Copywriter</div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <h3 class="h1 font-w300 text-warning">Away</h3>
+                <ul class="nav-users mt-10 push">
+                    <li>
+                        <a href="javascript:void(0)">
+                            <img class="img-avatar" src="assets/img/avatars/avatar12.jpg" alt="">
+                            <i class="fa fa-circle text-warning"></i> Brian Cruz
+                            <div class="font-w400 font-size-xs text-muted">Web Designer</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">
+                            <img class="img-avatar" src="assets/img/avatars/avatar9.jpg" alt="">
+                            <i class="fa fa-circle text-warning"></i> Ralph Murray
+                            <div class="font-w400 font-size-xs text-muted">Web Developer</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">
+                            <img class="img-avatar" src="assets/img/avatars/avatar6.jpg" alt="">
+                            <i class="fa fa-circle text-warning"></i> Helen Jacobs
+                            <div class="font-w400 font-size-xs text-muted">UI Designer</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">
+                            <img class="img-avatar" src="assets/img/avatars/avatar9.jpg" alt="">
+                            <i class="fa fa-circle text-warning"></i> Wayne Garcia
+                            <div class="font-w400 font-size-xs text-muted">Copywriter</div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <h3 class="h1 font-w300 text-muted">Offline</h3>
+                <ul class="nav-users mt-10 push">
+                    <li>
+                        <a href="javascript:void(0)">
+                            <img class="img-avatar" src="assets/img/avatars/avatar2.jpg" alt="">
+                            <i class="fa fa-circle text-muted"></i> Amber Harvey
+                            <div class="font-w400 font-size-xs text-muted">Photographer</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">
+                            <img class="img-avatar" src="assets/img/avatars/avatar11.jpg" alt="">
+                            <i class="fa fa-circle text-muted"></i> Justin Hunt
+                            <div class="font-w400 font-size-xs text-muted">Web Designer</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">
+                            <img class="img-avatar" src="assets/img/avatars/avatar11.jpg" alt="">
+                            <i class="fa fa-circle text-muted"></i> Jesse Fisher
+                            <div class="font-w400 font-size-xs text-muted">Web Designer</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">
+                            <img class="img-avatar" src="assets/img/avatars/avatar15.jpg" alt="">
+                            <i class="fa fa-circle text-muted"></i> Jeffrey Shaw
+                            <div class="font-w400 font-size-xs text-muted">Web Developer</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">
+                            <img class="img-avatar" src="assets/img/avatars/avatar7.jpg" alt="">
+                            <i class="fa fa-circle text-muted"></i> Andrea Gardner
+                            <div class="font-w400 font-size-xs text-muted">UI Designer</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">
+                            <img class="img-avatar" src="assets/img/avatars/avatar11.jpg" alt="">
+                            <i class="fa fa-circle text-muted"></i> Ryan Flores
+                            <div class="font-w400 font-size-xs text-muted">Copywriter</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">
+                            <img class="img-avatar" src="assets/img/avatars/avatar2.jpg" alt="">
+                            <i class="fa fa-circle text-muted"></i> Amber Harvey
+                            <div class="font-w400 font-size-xs text-muted">UI Designer</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">
+                            <img class="img-avatar" src="assets/img/avatars/avatar15.jpg" alt="">
+                            <i class="fa fa-circle text-muted"></i> Jack Estrada
+                            <div class="font-w400 font-size-xs text-muted">Copywriter</div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

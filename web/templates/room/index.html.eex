@@ -3,10 +3,11 @@
 <!-- Hover Table -->
 <div class="block">
     <div class="block-header block-header-default">
-        <h3 class="block-title">Hover Table</h3>
+        <h3 class="block-title"><b>Online Room List</b></h3>
         <div class="block-options">
             <div class="block-options-item">
-                <button type="button" class="btn btn-alt-warning" data-toggle="modal" data-target="#modal-fromright">Launch Modal</button>
+                <button type="button" class="btn btn-alt-info" data-toggle="modal" data-target="#modal-fromright">
+                <i class="fa fa-plus"> New Room</i></button>
             </div>
         </div>
     </div>
@@ -21,58 +22,9 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <th class="text-center" scope="row">1</th>
-                    <td>Amber Harvey</td>
-                    <td class="d-none d-sm-table-cell">
-                        <span class="badge badge-primary">Personal</span>
-                    </td>
-                    <td class="text-center">
-                        <div class="btn-group">
-                            <button type="button" class="btn btn-sm btn-secondary" data-toggle="tooltip" title="Edit">
-                                <i class="fa fa-pencil"></i>
-                            </button>
-                            <button type="button" class="btn btn-sm btn-secondary" data-toggle="tooltip" title="Delete">
-                                <i class="fa fa-times"></i>
-                            </button>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <th class="text-center" scope="row">2</th>
-                    <td>Laura Carr</td>
-                    <td class="d-none d-sm-table-cell">
-                        <span class="badge badge-primary">Personal</span>
-                    </td>
-                    <td class="text-center">
-                        <div class="btn-group">
-                            <button type="button" class="btn btn-sm btn-secondary" data-toggle="tooltip" title="Edit">
-                                <i class="fa fa-pencil"></i>
-                            </button>
-                            <button type="button" class="btn btn-sm btn-secondary" data-toggle="tooltip" title="Delete">
-                                <i class="fa fa-times"></i>
-                            </button>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <th class="text-center" scope="row">3</th>
-                    <td>Scott Young</td>
-                    <td class="d-none d-sm-table-cell">
-                        <span class="badge badge-success">VIP</span>
-                    </td>
-                    <td class="text-center">
-                        <div class="btn-group">
-                            <button type="button" class="btn btn-sm btn-secondary" data-toggle="tooltip" title="Edit">
-                                <i class="fa fa-pencil"></i>
-                            </button>
-                            <button type="button" class="btn btn-sm btn-secondary" data-toggle="tooltip" title="Delete">
-                                <i class="fa fa-times"></i>
-                            </button>
-                        </div>
-                    </td>
-                </tr>
-
+                <%= for room  <- @rooms do %>
+                    <%= render "room.html", room: room, conn: @conn %>
+                <% end %>
             </tbody>
         </table>
     </div>
