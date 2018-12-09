@@ -25,7 +25,12 @@ let Room = {
         })
 
         roomChannel.join()
-            .receive("ok", resp => console.log("Joined room channel ", resp))
+            .receive("ok", resp => {
+                console.log("Joined room channel ", resp);
+                resp.chats.forEach(message => {
+                    this.rendermsg(msgContainer, message);
+                });
+            })
             .receive("error", resp => console.log("Failed to join room channel ", resp))
     },
 
@@ -35,13 +40,13 @@ let Room = {
         return div.innerHTML;
     },
 
-    rendermsg(container, {user, body, at}){
+    rendermsg(container, {user, content, at}){
         let template = document.createElement('div');
-        if(user != myUser)
+        if(user.username != myUser)
             template.className = 'rounded font-w600 p-10 mb-10 animated fadeIn mr-50 bg-body-light';
         else
             template.className = 'rounded font-w600 p-10 mb-10 animated fadeIn ml-50 bg-body-light';
-        template.innerHTML = body;
+        template.innerHTML = content;
         container.appendChild(template);
         container.scrollTop = container.scrollHeight;
     }

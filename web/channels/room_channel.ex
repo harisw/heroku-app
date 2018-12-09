@@ -31,7 +31,7 @@ defmodule Heroku.RoomChannel do
                 broadcast! socket, "new chat", %{
                     id: chat.id,
                     user: Heroku.UserView.render("user.json", %{user: user}),
-                    body: params["content"],
+                    content: params["content"],
                     at: params["inserted_at"]
                 }
                 {:reply, :ok, socket}
