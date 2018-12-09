@@ -18,7 +18,7 @@ defmodule Heroku.Router do
     pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :index
-    resources "/users", UserController, only: [:index, :show, :new, :create]
+    resources "/users", UserController, only: [:index, :show, :new, :create, :edit, :update]
     resources "/sessions", SessionController, only: [:new, :create, :delete]
     resources "/room", RoomController, only: [:index, :create, :show], param: "slug"
   end

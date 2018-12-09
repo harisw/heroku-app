@@ -77,7 +77,7 @@ defmodule Heroku.Room do
       logo ->
         changeset
       true ->
-        put_change(changeset, :logo, Phoenix.View.static_path(Phoenix.Conn, "/images/rooms/default/default.png"))
+        put_change(changeset, :logo, Phoenix.Endpoint.static_path(Phoenix.Conn, "/images/rooms/default/default.png"))
     end    
   end
 end

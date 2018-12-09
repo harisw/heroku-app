@@ -40,16 +40,13 @@
             <!-- Side User -->
             <div class="content-side content-side-full content-side-user px-10 align-parent">
                 <!-- Visible only in mini mode -->
-                <div class="sidebar-mini-visible-b align-v animated fadeIn">
-                    <img class="img-avatar img-avatar32" src="<%= static_path(@conn, "/images/avatars/avatar15.jpg")%>" alt="">
-                </div>
                 <!-- END Visible only in mini mode -->
 
                 <!-- Visible only in normal mode -->
                 <%= if @current_user do %>
                     <div class="sidebar-mini-hidden-b text-center">
                         <a class="img-link" >
-                            <img class="img-avatar" src="<%= static_path(@conn, "/images/avatars/avatar15.jpg")%>" alt="">
+                            <img class="img-avatar" src="<%= static_path(@conn, @current_user.avatar)%>" alt="">
                         </a>
                         <ul class="list-inline mt-10">
                             <li class="list-inline-item">
