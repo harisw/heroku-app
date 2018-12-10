@@ -43,14 +43,7 @@ defmodule Heroku.User do
   end
 
   defp put_avatar(changeset, upload) do
-    base_url = System.get_env("BASE_URL")
-    IO.inspect upload
-    case upload do
-      nil ->
-        put_change(changeset, :avatar, "/images/avatars/default/default.jpg")
-      true ->
-        put_change(changeset, :avatar, upload)
-    end
+    put_change(changeset, :avatar, upload)
   end
 
 end

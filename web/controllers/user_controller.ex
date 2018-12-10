@@ -20,8 +20,8 @@ defmodule Heroku.UserController do
     end
 
     def create(conn, %{"user" => user_params}) do
-        moveAvatar(conn, user_params)
-        changeset = User.registration_changeset(%User{}, user_params, nil)
+        img_path = moveAvatar(user_params)
+        changeset = User.registration_changeset(%User{}, user_params, img_path)
         case Repo.insert(changeset) do
             {:ok, user} ->
                 conn
@@ -29,7 +29,7 @@ defmodule Heroku.UserController do
                 |> put_flash(:info, "#{user.name} created!")
                 |> redirect(to: room_path(conn, :index))
             {:error, changeset} ->
-                redirect(conn, to: user_path(conn, :new))
+                redirect(conn, to: user_path(conn, :new), changeset: changeset)
         end
     end
 
@@ -39,13 +39,18 @@ defmodule Heroku.UserController do
         render conn, "edit.html", user: user, changeset: changeset
     end
 
-    defp moveAvatar(conn, user_params) do
-        # base_url = System.get_env("BASE_URL")
-        # Logger.info "BASE URL#{base_url}"
-        if upload = user_params["avatar"] do
-            username = user_params["username"]
-            extension = Path.extname(upload.filename)
-            File.cp!(upload.path, "web/static/assets/images/avatars/#{username}#{extension}")
+    defp moveAvatar(user_params) do
+        base_path = Application.get_env(:heroku, Heroku.Endpoint)[:media_path]
+        IO.inspect base_path
+        case user_params["avatar"] do
+            nil ->
+                "/images/avatars/default/default.jpg"
+            upload ->
+                username = user_params["username"]
+                extension = Path.extname(upload.filename)
+                new_file = "avatars/#{username}#{extension}"
+                File.cp!(upload.path, "#{base_path}#{new_file}")
+                "/uploads/#{new_file}"
         end
     end
 end
