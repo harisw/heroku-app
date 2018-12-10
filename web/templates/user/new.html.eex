@@ -7,8 +7,8 @@
                 </div>
             </div>
             <div class="block-content">
-                <%= render "form.html", changeset: @changeset, action: user_path(@conn, :create), current_user: nil, conn: @conn %>
-                <p>If you already have account, <%= link "Login Here", to: user_path(@conn, :index)%> </p>                
+                <%= render "form.html", changeset: @changeset, action: user_path(@conn, :create), user: nil, conn: @conn %>
+                <p>If you already have account, <%= link "Login Here", to: user_path(@conn, :index)%> </p>
             </div>
         </div>
     </div>

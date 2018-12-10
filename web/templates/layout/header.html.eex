@@ -31,9 +31,9 @@
 
                                         <!-- Toggle Side Overlay -->
                                         <!-- Layout API, functionality initialized in Codebase() -> uiApiLayout() -->
-                                        <a class="dropdown-item"  data-toggle="layout" data-action="side_overlay_toggle">
+                                        <%= link to: user_path(@conn, :edit, @current_user), class: "dropdown-item" do %>
                                             <i class="si si-wrench mr-5"></i> Settings
-                                        </a>
+                                        <% end %>
                                         <!-- END Side Overlay -->
 
                                         <div class="dropdown-divider"></div>

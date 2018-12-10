@@ -10,7 +10,7 @@
                 </div>
             </div>
             <div class="block-content">
-                <%= render "form.html", changeset: @changeset, user: @user, action: user_path(@conn, :update) %>
+                <%= render "form.html", changeset: @changeset, user: @user, action: user_path(@conn, :update, @user), conn: @conn %>
                 <p>If you already have account, <%= link "Login Here", to: user_path(@conn, :index)%> </p>                
             </div>
         </div>

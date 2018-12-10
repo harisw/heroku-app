@@ -18,13 +18,13 @@ defmodule Heroku.User do
   """
   def changeset(struct, params \\ %{}) do
     struct
-    |> cast(params, [:username, :name])
+    |> cast(params, [:username, :name, :phone])
     |> validate_required([:username, :name])
     |> unique_constraint(:username)
     |> unique_constraint(:phone)
   end
 
-  def registration_changeset(user, params, upload) do
+  def apply_changeset(user, params, upload) do
     user
     |> changeset(params)
     |> cast(params, ~w(password), [])
