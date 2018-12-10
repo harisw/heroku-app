@@ -3,6 +3,6 @@ defmodule Heroku.UserView do
     alias Heroku.User
 
     def render("user.json", %{user: user}) do
-        %{username: user.username}
+        %{username: user.username, avatar: user.avatar}
     end
 end

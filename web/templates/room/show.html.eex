@@ -21,39 +21,18 @@
                     <input type="hidden" id="myUser" value="<%= @current_user.username %>">
                     <input type="hidden" id="roomSlug" value="<%= @room.slug%> ">
                     <div class="input-group input-group-lg">
-                        <div class="input-group-prepend" id="submitBtn">
+                        <input class="js-chat-input form-control" type="text" data-target-chat-id="1" id="messageInput" placeholder="Type your message and hit enter..">
+                        <div class="input-group-append" id="submitBtn">
                             <span class="input-group-text">
                                 <i class="fa fa-comment text-primary"></i>
                             </span>
                         </div>
-                        <input class="js-chat-input form-control" type="text" data-target-chat-id="1" id="messageInput" placeholder="Type your message and hit enter..">
+
                     </div>
             </div>
             <!-- END Chat Input -->
         </div>
         <!-- END Chat Window #1 -->
-
-        <!-- Chat Window #2 -->
-        <div class="tab-pane fade" id="chat-window2" role="tabpanel">
-            <!-- Messages (demonstration messages are added with JS code at the bottom of this page) -->
-            <div class="js-chat-talk block-content block-content-full text-wrap-break-word overflow-y-auto" data-chat-id="2"></div>
-
-            <!-- Chat Input -->
-            <div class="js-chat-form block-content block-content-full block-content-sm bg-body-light">
-                <form action="be_comp_chat_multiple.html" method="post">
-                    <div class="input-group input-group-lg">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text">
-                                <i class="fa fa-comment text-primary"></i>
-                            </span>
-                        </div>
-                        <input class="js-chat-input form-control" type="text" data-target-chat-id="2" placeholder="Type your message and hit enter..">
-                    </div>
-                </form>
-            </div>
-            <!-- END Chat Input -->
-        </div>
-        <!-- END Chat Window #2 -->
 
         <!-- People -->
 
