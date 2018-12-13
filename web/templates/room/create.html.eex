@@ -51,8 +51,12 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="password">Room Password</label>
+                        <label for="password">Password</label>
                         <%= password_input f, :password, placeholder: "Enter your room password here...", class: "form-control", disabled: "true", id: "passwordInput"%>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Description</label>
+                        <%= textarea f, :description, placeholder: "Enter your some description here... Optional :)", class: "form-control", rows: "5"%>
                     </div>
                     <%= hidden_input f, :logo, value: "/images/rooms/default/default.jpg" %>
                 </div>

@@ -57,7 +57,7 @@
                             <div class="content content-top content-full text-center">
                                 <div class="py-20">
                                     <h1 class="h2 font-w700 text-white mb-10"><%= @room.name %></h1>
-                                    <h2 class="h4 font-w400 text-white-op mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris congue, massa at vehicula auctor, ex dolor dictum nisl, ac venenatis nulla tortor aliquet mauris. Donec quis nisi convallis, facilisis ipsum eu, faucibus libero. Vivamus ultricies elit lectus, vel dapibus nibh convallis vel. Nulla consequat dolor s</h2>
+                                    <h2 class="h4 font-w400 text-white-op mb-0"><%= @room.description %></h2>
                                 </div>
                             </div>
                         </div>

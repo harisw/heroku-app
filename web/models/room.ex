@@ -11,6 +11,7 @@ defmodule Heroku.Room do
     field :logo, :string
     field :user_limit, :integer
     field :type, :integer
+    field :description, :string
 
     has_many :chats, Heroku.Chat
     timestamps()
@@ -21,7 +22,7 @@ defmodule Heroku.Room do
   """
   def changeset(struct, params \\ %{}) do
     struct
-    |> cast(params, [:name])
+    |> cast(params, [:name, :description, :type, :user_limit])
     |> validate_required([:name])
     |> unique_constraint(:name)
   end
