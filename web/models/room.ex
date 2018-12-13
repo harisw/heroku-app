@@ -9,6 +9,8 @@ defmodule Heroku.Room do
     field :is_online, :boolean
     field :last_update, :utc_datetime
     field :logo, :string
+    field :user_limit, :integer
+    field :type, :integer
 
     has_many :chats, Heroku.Chat
     timestamps()
@@ -24,14 +26,14 @@ defmodule Heroku.Room do
     |> unique_constraint(:name)
   end
 
-  def creation_changeset(room, params) do
+  def creation_changeset(room, params, upload) do
     room
     |> changeset(params)
     |> cast(params, ~w(password), [])
     |> put_pass_hash()
     |> slugify_name()
     |> add_last_update()
-    |> insert_img()
+    |> put_logo(upload)
   end
 
   defp put_pass_hash(changeset) do
@@ -72,12 +74,8 @@ defmodule Heroku.Room do
     end
   end
 
-  def insert_img(changeset) do
-    case get_field(changeset, :logo) do
-      logo ->
-        changeset
-      true ->
-        put_change(changeset, :logo, Phoenix.Endpoint.static_path(Phoenix.Conn, "/images/rooms/default/default.png"))
-    end    
+  defp put_logo(changeset, upload) do
+    put_change(changeset, :logo, upload)
   end
+
 end

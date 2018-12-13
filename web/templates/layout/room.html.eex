@@ -7,14 +7,14 @@
 
         <title>Heroku ChatRoom</title>
 
-        <meta name="description" content="Codebase - Bootstrap 4 Admin Template &amp; UI Framework created by pixelcave and published on Themeforest">
+        <meta name="description" content="Heroku ChatRoom">
         <meta name="author" content="pixelcave">
         <meta name="robots" content="noindex, nofollow">
 
         <!-- Open Graph Meta -->
-        <meta property="og:title" content="Codebase - Bootstrap 4 Admin Template &amp; UI Framework">
-        <meta property="og:site_name" content="Codebase">
-        <meta property="og:description" content="Codebase - Bootstrap 4 Admin Template &amp; UI Framework created by pixelcave and published on Themeforest">
+        <meta property="og:title" content="Heroku ChatRoom">
+        <meta property="og:site_name" content="ChatRoom">
+        <meta property="og:description" content="Heroku ChatRoom">
         <meta property="og:type" content="website">
         <meta property="og:url" content="">
         <meta property="og:image" content="">
@@ -51,6 +51,19 @@
 
             <!-- Main Container -->
             <main id="main-container">
+                <%= if assigns[:room] do %>
+                    <div class="bg-image" style="background-image: url('<%= @room.logo %>');">
+                        <div class="bg-black-op-75">
+                            <div class="content content-top content-full text-center">
+                                <div class="py-20">
+                                    <h1 class="h2 font-w700 text-white mb-10"><%= @room.name %></h1>
+                                    <h2 class="h4 font-w400 text-white-op mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris congue, massa at vehicula auctor, ex dolor dictum nisl, ac venenatis nulla tortor aliquet mauris. Donec quis nisi convallis, facilisis ipsum eu, faucibus libero. Vivamus ultricies elit lectus, vel dapibus nibh convallis vel. Nulla consequat dolor s</h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <% end %>
+
                 <!-- Page Content -->
                 <div class="content">
                     <%= render @view_module, @view_template, assigns %>

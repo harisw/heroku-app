@@ -1,0 +1,69 @@
+<div class="modal fade" id="modal-fromright" tabindex="-1" role="dialog" aria-labelledby="modal-fromright" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-fromright" role="document">
+        <div class="modal-content">
+            <div class="block block-themed block-transparent mb-0">
+                <div class="block-header bg-primary-dark">
+                    <h3 class="block-title">Create New Chatroom</h3>
+                    <div class="block-options">
+                        <button type="button" class="btn-block-option" data-dismiss="modal" aria-label="Close">
+                            <i class="si si-close"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="block-content">
+                    <%= form_for @changeset, room_path(@conn, :create), [multipart: true], fn f ->%>
+        <div id="img-preview" style="background-image: url('<%= static_path(@conn, "/images/rooms/default/default.png")%>');
+        background-size: cover; background-repeat: no-repeat; width: 180px; height: 180px; border-radius: 50%; position: relative; left: 36%;">
+            <label for="img-upload" id="img-label" style="position: absolute;
+  z-index: 5;
+  opacity: 0.8;
+  cursor: pointer;
+  background-color: #bdc3c7;
+  width: 130px;
+  height: 40px;
+  font-size: 15px;
+  line-height: 50px;
+  text-transform: uppercase;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  text-align: center;">Choose Image</label>
+            <%= file_input f, :logo_file, placeholder: "Choose your avatar img", class: "custom-file-input", id: "img-upload"%>
+        </div>
+                    <div class="form-group">
+                        <label for="name">Room Name</label>
+                        <%= text_input f, :name, placeholder: "Create your own room name", class: "form-control"%>
+                    </div>
+                    <div class="form-group">
+                        <label for="room_type">Room Type</label>
+                        <%= select f, :type, ["Public": "1", "Private": "2"], class: "form-control"%>
+                    </div>
+                    <div class="form-group">
+                        <label for="user_limit">Maximum User</label>
+                        <%= number_input f, :user_limit, class: "form-control", placeholder: "Enter your desired maximum user, Optional", min: "1" %>
+                    </div>
+                    <div class="form-group">
+                        <div class="custom-control custom-checkbox mb-5">
+                            <input class="custom-control-input" type="checkbox" id="usePassword" value="true">
+                            <label class="custom-control-label" for="usePassword">Use Password</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Room Password</label>
+                        <%= password_input f, :password, placeholder: "Enter your room password here...", class: "form-control", disabled: "true", id: "passwordInput"%>
+                    </div>
+                    <%= hidden_input f, :logo, value: "/images/rooms/default/default.jpg" %>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-alt-secondary" data-dismiss="modal">Cancel</button>
+                <%= submit class: "btn btn-primary" do %>
+                    <i class="fa fa-check"></i> Create
+                <% end %>
+                <% end %>
+            </div>
+        </div>
+    </div>
+</div>

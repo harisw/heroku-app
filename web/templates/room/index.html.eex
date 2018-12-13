@@ -31,37 +31,4 @@
 </div>
 <!-- END Hover Table -->
 
-<div class="modal fade" id="modal-fromright" tabindex="-1" role="dialog" aria-labelledby="modal-fromright" aria-hidden="true">
-    <div class="modal-dialog modal-lg modal-dialog-fromright" role="document">
-        <div class="modal-content">
-            <div class="block block-themed block-transparent mb-0">
-                <div class="block-header bg-primary-dark">
-                    <h3 class="block-title">Create New Chatroom</h3>
-                    <div class="block-options">
-                        <button type="button" class="btn-block-option" data-dismiss="modal" aria-label="Close">
-                            <i class="si si-close"></i>
-                        </button>
-                    </div>
-                </div>
-                <div class="block-content">
-                    <%= form_for @changeset, room_path(@conn, :create), fn f ->%>
-                    <div class="form-group">
-                        <label for="name">Room Name</label>
-                        <%= text_input f, :name, placeholder: "Create your own room name", class: "form-control"%>
-                    </div>
-                    <div class="form-group">
-                        <label for="password">Room Password</label>
-                        <%= password_input f, :password, placeholder: "Use password if you want", class: "form-control"%>
-                    </div>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-alt-secondary" data-dismiss="modal">Cancel</button>
-                <%= submit class: "btn btn-primary" do %>
-                    <i class="fa fa-check"></i> Create
-                <% end %>
-                <% end %>
-            </div>
-        </div>
-    </div>
-</div>
+<%= render "create.html", assigns %>

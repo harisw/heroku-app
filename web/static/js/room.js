@@ -1,5 +1,6 @@
 const RoomSlug = document.getElementById("roomSlug").value;
 const myUser = document.getElementById("myUser").value;
+
 let Room = {
     init(socket){
         socket.connect();
