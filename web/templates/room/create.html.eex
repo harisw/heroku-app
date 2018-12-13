@@ -12,7 +12,7 @@
                 </div>
                 <div class="block-content">
                     <%= form_for @changeset, room_path(@conn, :create), [multipart: true], fn f ->%>
-        <div id="img-preview" style="background-image: url('<%= static_path(@conn, "/images/rooms/default/default.png")%>');
+        <div id="img-preview" style="background-image: url('<%= static_path(@conn, "/images/rooms/default/default.jpg")%>');
         background-size: cover; background-repeat: no-repeat; width: 180px; height: 180px; border-radius: 50%; position: relative; left: 36%;">
             <label for="img-upload" id="img-label" style="position: absolute;
   z-index: 5;

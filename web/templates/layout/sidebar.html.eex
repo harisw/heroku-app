@@ -72,26 +72,6 @@
                             <i class="si si-cup"></i><span class="sidebar-mini-hide">Chat Room</span>
                         <% end %>
                     </li>
-                    <li class="open">
-                        <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="si si-badge"></i><span class="sidebar-mini-hide">Page Kits</span></a>
-                        <ul>
-                            <li class="open">
-                                <a class="nav-submenu" data-toggle="nav-submenu" href="#"><span class="sidebar-mini-hide">Dashboards</span></a>
-                                <ul>
-                                    <li>
-                                        <a class="active" href="be_pages_dashboard2.html"><span class="sidebar-mini-hide">Dashboard 2</span></a>
-                                    </li>
-                                    <li>
-                                        <a href="be_pages_dashboard3.html"><span class="sidebar-mini-hide">Dashboard 3</span></a>
-                                    </li>
-                                    <li>
-                                        <a href="be_pages_dashboard4.html"><span class="sidebar-mini-hide">Dashboard 4</span></a>
-                                    </li>
-                                </ul>
-                            </li>
-
-                        </ul>
-                    </li>
 
                 </ul>
             </div>
