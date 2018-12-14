@@ -6,7 +6,7 @@
     "watch": "brunch watch --stdin"
   },
   "engines": { 
-    "node": ">=10.14"
+    "node": "10.14"
   },
   "dependencies": {
     "jquery": "^3.3.1",
