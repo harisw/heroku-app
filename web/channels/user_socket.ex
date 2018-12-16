@@ -1,6 +1,10 @@
 defmodule Heroku.UserSocket do
   use Phoenix.Socket
 
+  socket "/socket", Heroku.UserSocket,
+    websocket: [timeout: 45_000],
+    longpoll: false
+
   ## Channels
   channel "room:*", Heroku.RoomChannel
 
