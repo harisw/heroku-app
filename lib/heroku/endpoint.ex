@@ -1,9 +1,9 @@
 defmodule Heroku.Endpoint do
   use Phoenix.Endpoint, otp_app: :heroku
 
-  socket "/socket", Heroku.UserSocket,
-    longpoll: false,
-    websocket: [timeout: 45_000]
+  socket "/socket", Heroku.UserSocket
+    # longpoll: false,
+    # websocket: [timeout: 45_000]
     
   # Serve at "/" the static files from "priv/static" directory.
   #
