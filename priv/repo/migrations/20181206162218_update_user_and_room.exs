@@ -4,7 +4,7 @@ defmodule Heroku.Repo.Migrations.UpdateUserAndRoom do
   def change do
     alter table(:rooms) do
       add :is_online, :boolean
-      add :last_update, :datetime
+      add :last_update, :utc_datetime
     end
     alter table(:users) do
       add :phone, :string
