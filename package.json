@@ -5,7 +5,7 @@
     "deploy": "brunch build --production",
     "watch": "brunch watch --stdin"
   },
-  "engines": { 
+  "engines": {
     "node": "10.14",
     "npm": "6.x"
   },

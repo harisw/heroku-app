@@ -13,19 +13,16 @@ use Mix.Config
 # which you typically run after static files are built.
 config :heroku, Heroku.Endpoint,
   http: [:inet6, port: {:system, "PORT"}],
-  url: [scheme: "https", host: "safe-inlet-21107.herokuapp.com/", port: 443],
+  url: [scheme: "https", host: "frozen-savannah-96938.herokuapp.com", port: 443],
   force_ssl: [rewrite_on: [:x_forwarded_proto]],
   cache_static_manifest: "priv/static/cache_manifest.json",
   secret_key_base: Map.fetch!(System.get_env(), "SECRET_KEY_BASE")
 
+
 # Do not print debug messages in production
 config :logger, level: :info
 
-config :heroku, Heroku.Repo,
-  url: System.get_env("DATABASE_URL"),
-  pool_size: String.to_integer(System.get_env("POOL_SIZE") || "10"),
-  ssl: true
-  # ## SSL Support
+# ## SSL Support
 #
 # To get SSL working, you will need to add the `https` key
 # to the previous section and set your `:url` port to 443:
@@ -63,6 +60,12 @@ config :heroku, Heroku.Repo,
 #     config :heroku, Heroku.Endpoint, server: true
 #
 
+# Configure your database
+config :heroku, Heroku.Repo,
+  url: System.get_env("DATABASE_URL"),
+  pool_size: String.to_integer(System.get_env("POOL_SIZE") || "10"),
+  ssl: true
+
 # Finally import the config/prod.secret.exs
 # which should be versioned separately.
-import_config "prod.secret.exs"
+# import_config "prod.secret.exs"

@@ -25,23 +25,23 @@
         </div>
         <div class="col-xl-6">
             <%= link to: room_path(@conn, :index), class: "block block-transparent bg-image d-flex align-items-stretch" do %>
-                <div class="block-content block-sticky-options pt-100 bg-black-op">
-                    <div class="block-options block-options-left text-white">
-                        <div class="block-options-item">
-                            <i class="si si-book-open text-white-op"></i>
-                        </div>
-                    </div>
-                    <div class="block-options text-white">
-                        <div class="block-options-item">
-                            <i class="si si-bubbles"></i> 15
-                        </div>
-                        <div class="block-options-item">
-                            <i class="si si-eye"></i> 3800
-                        </div>
-                    </div>
-                    <h2 class="h3 font-w700 text-white mb-5">Chat Room</h2>
-                    <h3 class="h5 text-white-op">Create or Find your chat room Here!</h3>
-                </div>
+<div class="block-content block-sticky-options pt-100 bg-black-op">
+    <div class="block-options block-options-left text-white">
+        <div class="block-options-item">
+            <i class="si si-book-open text-white-op"></i>
+        </div>
+    </div>
+    <div class="block-options text-white">
+        <div class="block-options-item">
+            <i class="si si-bubbles"></i> 15
+        </div>
+        <div class="block-options-item">
+            <i class="si si-eye"></i> 3800
+        </div>
+    </div>
+    <h2 class="h3 font-w700 text-white mb-5">Chat Room</h2>
+    <h3 class="h5 text-white-op">Create or Find your chat room Here!</h3>
+</div>
             <% end %>
         </div>
         <!-- END Row #2 -->
