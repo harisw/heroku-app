@@ -63,7 +63,7 @@ defmodule Heroku.Room do
   def add_last_update(changeset) do
     case changeset do
       %Ecto.Changeset{valid?: true} ->
-        put_change(changeset, :last_update, NaiveDateTime.utc_now())
+        put_change(changeset, :last_update, DateTime.truncate(DateTime.utc_now(), :second))
       _ ->
        changeset 
     end
