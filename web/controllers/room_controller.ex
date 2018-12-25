@@ -23,7 +23,7 @@ defmodule Heroku.RoomController do
             {:ok, room} ->
                 conn
                 |> redirect(to: room_path(conn, :show, room))
-            {:error, changeset} ->
+            {:error, _changeset} ->
                 redirect(conn, to: room_path(conn, :index))
         end
     end

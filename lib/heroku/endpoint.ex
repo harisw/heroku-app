@@ -14,7 +14,7 @@ defmodule Heroku.Endpoint do
     only: ~w(css fonts images js favicon.ico robots.txt)
 
   plug Plug.Static,
-    at: "/uploads", from: "media"
+    at: "/uploads", from: Application.get_env(:heroku, Heroku.Endpoint)[:media_path]
 
   # Code reloading can be explicitly enabled under the
   # :code_reloader configuration of your endpoint.

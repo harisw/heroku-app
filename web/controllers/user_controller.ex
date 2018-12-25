@@ -45,7 +45,7 @@ defmodule Heroku.UserController do
         changeset = User.apply_changeset(user, user_params, img_path)
 
         case Repo.update(changeset) do
-            {:ok, user} ->
+            {:ok, _user} ->
                 conn
                 |> put_flash(:info, "User updated")
                 |> redirect(to: room_path(conn, :index))

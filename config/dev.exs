@@ -25,8 +25,7 @@ config :heroku, Heroku.Endpoint,
   code_reloader: true,
   check_origin: false,
   watchers: [node: ["node_modules/brunch/bin/brunch", "watch", "--stdin",
-                    cd: Path.expand("../", __DIR__)]],
-  media_path: "/media/"
+                    cd: Path.expand("../", __DIR__)]]
 
 # Watch static and templates for browser reloading.
 config :heroku, Heroku.Endpoint,
@@ -54,3 +53,5 @@ config :heroku, Heroku.Repo,
   database: "heroku_dev",
   hostname: "localhost",
   pool_size: 10
+
+import_config "dev.secret.exs"
